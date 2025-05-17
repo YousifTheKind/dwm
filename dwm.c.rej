@@ -1,0 +1,19 @@
+diff a/dwm.c b/dwm.c	(rejected hunks)
+@@ -1421,7 +1431,7 @@ sendmon(Client *c, Monitor *m)
+ 	detachstack(c);
+ 	c->mon = m;
+ 	c->tags = m->tagset[m->seltags]; /* assign tags of target monitor */
+-	attach(c);
++	attachbottom(c);
+ 	attachstack(c);
+ 	focus(NULL);
+ 	arrange(NULL);
+@@ -1903,7 +1913,7 @@ updategeom(void)
+ 					m->clients = c->next;
+ 					detachstack(c);
+ 					c->mon = mons;
+-					attach(c);
++					attachbottom(c);
+ 					attachstack(c);
+ 				}
+ 				if (m == selmon)
